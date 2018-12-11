@@ -3,7 +3,6 @@
 gridsn = 9995
 
 pg=[[10] * 302 for i in  range(302)]
-ps=[[[10] * 302 for i in  range(302)] for j in range(301)]
 
 score = []
 for x in range(1,301):
@@ -16,7 +15,8 @@ for x in range(1,301):
             pl = -5
         pg[x][y] = pl
 
-for s in range(1,301):
+#for s in range(300,0,-1):
+for s in range(6,34):
     high=0
     low =0
     maxpower=[0,0]
@@ -27,8 +27,8 @@ for s in range(1,301):
             for dx in range(0,s):
                 for dy in range(0,s):
                     total += pg[x+dx][y+dy]
-            ps[x][y]=total
             if high < total:
+                #print(total)
                 high = total
                 maxpower = [x,y]
             if low > total:
@@ -37,7 +37,7 @@ for s in range(1,301):
 
     
     score.append([maxpower, s, high])
-    #print(s, minpower, low)
+    print(s, maxpower, high)
 
 winner = 0
 index = 0
