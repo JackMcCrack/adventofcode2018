@@ -106,7 +106,7 @@ for y in range(len(field)):
 
 cartsremain = len(carts)
 while  cartsremain > 1: 
-    print(cartsremain)
+    #print(cartsremain)
     for i in range(len(carts)):
         carts[i].move()
         for j in range(len(carts)):
